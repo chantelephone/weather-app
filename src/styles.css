@@ -1,0 +1,64 @@
+body {
+  border: 0.5rem outset black;
+  border-width: thick;
+  border-style: solid;
+  margin: 50px 40px 40px 40px;
+  border-radius: 38px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(216, 241, 230, 0.46) 0.1%,
+    rgba(233, 226, 226, 0.28) 90.1%
+  );
+}
+
+h1 {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+p {
+  border: solid;
+  border-color: black;
+  border-radius: 70px;
+  padding: 50px;
+}
+
+button {
+  background-color: black;
+  color: antiquewhite;
+}
+
+.tempMain {
+  border: none;
+  font-size: 50pt;
+}
+
+.unit {
+  border: none;
+  font-size: x-large;
+}
+
+.wind {
+  border: none;
+}
+
+.precipitation {
+  border: none;
+}
+
+.col-search {
+  font-weight: 900;
+}
+.current {
+  font-weight: 900;
+}
+.currentwindper {
+  color: rgb(115, 29, 29);
+}
+
+.days {
+  margin-top: 100px;
+  text-align: center;
+}
