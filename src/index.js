@@ -53,10 +53,10 @@ function searchBar(event) {
   let searchInput = document.querySelector("#city-input");
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${searchInput.value}`;
-  let apiKey = "f0436be8260c91518393bb3b11d76f57";
+  let apiKey = "44b0o7f8fab0527e4faa33t62cd1fcc3";
   let city = document.querySelector("#city-input").value;
   let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}&units=metric";
+    "https://api.shecodes.io/weather/v1/current?query={searchInput}&key={apiKey}&units=metric";
   axios.get(apiUrl).then(showCity);
 }
 
