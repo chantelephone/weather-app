@@ -43,25 +43,7 @@ let month = now.getMonth();
 let todaysDate = document.querySelector("#todays-date");
 todaysDate.innerHTML = `${day} | ${hour}:${minute}`;
 
-//Search Bar
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchBar);
-
-function searchBar(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#city-input");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${searchInput.value}`;
-  let apiKey = "44b0o7f8fab0527e4faa33t62cd1fcc3";
-  let city = document.querySelector("#city-input").value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(`${apiUrl}`).then(showCurrentConditions);
-}
-
-//Test comment
-
-//C and F Links Java
+// and F Links Java
 //Celsius
 
 let tempMain = document.querySelector(".tempMain");
@@ -84,10 +66,28 @@ function unitFarenheit(event) {
 let farenheit = document.querySelector("#farenheit-temp");
 farenheit.addEventListener("click", unitFarenheit);
 
-//Currrent Button
+//Currrent Button and search bar
+
+//Search Bar
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchBar);
+
+function searchBar(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#city-input");
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = `${searchInput.value}`;
+  let apiKey = "44b0o7f8fab0527e4faa33t62cd1fcc3";
+  let city = document.querySelector("#city-input").value;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(showCurrentConditions);
+}
 
 let currentConditions = document.querySelector("#current-conditions");
 currentConditions.addEventListener("click", currentButton);
+
+//Current Button
 
 function currentButton(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
