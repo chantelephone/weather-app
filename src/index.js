@@ -106,7 +106,6 @@ function searchLocation(position) {
 }
 
 function showCurrentConditions(response) {
-  console.log(response.data);
   let cityHeading = document.querySelector("#input-city");
   cityHeading.innerHTML = response.data.city;
 
