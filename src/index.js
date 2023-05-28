@@ -106,13 +106,15 @@ function searchLocation(position) {
 }
 
 function showCurrentConditions(response) {
-  console.log(response);
+  console.log(response.data);
   let cityHeading = document.querySelector("#input-city");
   cityHeading.innerHTML = response.data.city;
 
   let temperature = Math.round(response.data.temperature.current);
   let headingTemp = document.querySelector(".tempMain");
   headingTemp.innerHTML = `${temperature}°`;
+
+  let weatherIcon = document.querySelector("#weather-icon");
 
   document.querySelector("#current-humidity").innerHTML =
     response.data.temperature.humidity;
@@ -122,4 +124,10 @@ function showCurrentConditions(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
+
+  weatherIcon.setAttribute(
+    "src",
+    `https://api.shecodes.io/img/v1/current?query=${response.data.condition.icon_url}`
+    //CHeck
+  );
 }
