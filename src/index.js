@@ -64,7 +64,7 @@ function searchBar(event) {
 //C and F Links Java
 //Celsius
 
-let tempMain = document.querySelector("tempMain");
+let tempMain = document.querySelector(".tempMain");
 
 function unitCelsius(event) {
   event.preventDefault();
@@ -84,8 +84,6 @@ function unitFarenheit(event) {
 let farenheit = document.querySelector("#farenheit-temp");
 farenheit.addEventListener("click", unitFarenheit);
 
-//API
-
 //Currrent Button
 
 let currentConditions = document.querySelector("#current-conditions");
@@ -104,7 +102,7 @@ function searchLocation(position) {
 
   axios.get(`${apiUrl}`).then(showCurrentConditions);
 }
-
+//Current button functions cont'd, also starting from search input...
 function showCurrentConditions(response) {
   let cityHeading = document.querySelector("#input-city");
   cityHeading.innerHTML = response.data.city;
