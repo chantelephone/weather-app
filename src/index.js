@@ -55,27 +55,8 @@ function searchBar(event) {
   h1.innerHTML = `${searchInput.value}`;
   let apiKey = "44b0o7f8fab0527e4faa33t62cd1fcc3";
   let city = document.querySelector("#city-input").value;
-  let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?query={query}&key={apiKey}&units=metric";
-  axios.get(`${apiUrl}`).then(showCity);
-}
-
-function showCity(response) {
-  let cityHeading = document.querySelector("h1");
-  cityHeading.innerHTML = response.data.name;
-
-  let temperature = Math.round(response.data.temperature.current);
-  let headingTemp = document.querySelector(".tempMain");
-  headingTemp.innerHTML = `${temperature}°`;
-
-  document.querySelector("#current-humidity").innerHTML =
-    response.data.temperature.humidity;
-
-  document.querySelector("#current-wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#weather-description").innerHTML =
-    response.data.condition.description;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(showCurrentConditions);
 }
 
 //Test comment
@@ -119,27 +100,26 @@ function searchLocation(position) {
   let lon = position.coords.longitude;
 
   let apiKey = "44b0o7f8fab0527e4faa33t62cd1fcc3";
-  let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={44b0o7f8fab0527e4faa33t62cd1fcc3}&units=metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
 
   axios.get(`${apiUrl}`).then(showCurrentConditions);
 }
 
 function showCurrentConditions(response) {
   console.log(response);
-  let cityHeading = document.querySelector("#city-input").value;
-  cityHeading.innerHTML = response.data.name;
+  let cityHeading = document.querySelector("#input-city");
+  cityHeading.innerHTML = response.data.city;
 
-  let temperature = Math.round(response.data.main.temp);
-  let headingTemp = document.querySelector("tempMain");
+  let temperature = Math.round(response.data.temperature.current);
+  let headingTemp = document.querySelector(".tempMain");
   headingTemp.innerHTML = `${temperature}°`;
 
   document.querySelector("#current-humidity").innerHTML =
-    response.data.main.temperature.humidity;
+    response.data.temperature.humidity;
 
   document.querySelector("#current-wind").innerHTML = Math.round(
-    response.data.main.wind.speed
+    response.data.wind.speed
   );
   document.querySelector("#weather-description").innerHTML =
-    response.data.main.condition.description;
+    response.data.condition.description;
 }
