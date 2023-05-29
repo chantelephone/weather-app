@@ -55,12 +55,14 @@ h1 {
   color: #f8f9fa;
   border: none;
   background: none;
+  padding-bottom: 50px;
 }
 
 .weatherDesc {
   color: black;
   border: none;
   background: none;
+  padding-bottom: 50px;
 }
 
 .wind {
@@ -81,13 +83,6 @@ h1 {
 
 .humidityIcon {
   padding-left: 10px;
-}
-
-p {
-  border: solid;
-  border-color: black;
-  border-radius: 70px;
-  padding: 50px;
 }
 
 button {
@@ -126,7 +121,39 @@ button {
   font-weight: 900;
 }
 
-.days {
+.weatherForecast {
   margin-top: 100px;
   text-align: center;
+  border: none;
+  padding-bottom: 30px;
+}
+
+.col-mon {
+  border: none;
+  padding: 30px;
+  font-size: 18pt;
+}
+
+.col-tue {
+  border: none;
+  padding: 30px;
+  font-size: 18pt;
+}
+
+.col-wed {
+  border: none;
+  padding: 30px;
+  font-size: 18pt;
+}
+
+.col-thurs {
+  border: none;
+  padding: 30px;
+  font-size: 18pt;
+}
+
+.col-fri {
+  border: none;
+  padding: 30px;
+  font-size: 18pt;
 }
