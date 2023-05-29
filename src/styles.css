@@ -62,11 +62,13 @@ h1 {
 }
 
 .wind {
+  font-size: 22pt;
   display: inline-block;
   border: none;
 }
 
-.precipitation {
+.humidity {
+  font-size: 22pt;
   display: inline-block;
   border: none;
 }
