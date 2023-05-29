@@ -43,29 +43,6 @@ let month = now.getMonth();
 let todaysDate = document.querySelector("#todays-date");
 todaysDate.innerHTML = `${day} | ${hour}:${minute}`;
 
-// and F Links Java
-//Celsius
-
-let tempMain = document.querySelector(".tempMain");
-
-function unitCelsius(event) {
-  event.preventDefault();
-  tempMain.innerHTML = `20°`;
-}
-
-let celsius = document.querySelector("#celsius-temp");
-celsius.addEventListener("click", unitCelsius);
-
-//Farenheit
-
-function unitFarenheit(event) {
-  event.preventDefault();
-  tempMain.innerHTML = `66°`;
-}
-
-let farenheit = document.querySelector("#farenheit-temp");
-farenheit.addEventListener("click", unitFarenheit);
-
 //Currrent Button and search bar
 
 //Search Bar
@@ -109,7 +86,7 @@ function showCurrentConditions(response) {
 
   let temperature = Math.round(response.data.temperature.current);
   let headingTemp = document.querySelector(".tempMain");
-  headingTemp.innerHTML = `${temperature}°`;
+  headingTemp.innerHTML = `${temperature}`;
 
   let weatherIcon = document.querySelector("#weather-icon");
 
@@ -124,7 +101,32 @@ function showCurrentConditions(response) {
 
   weatherIcon.setAttribute(
     "src",
-    `https://api.shecodes.io/img/v1/current?query=${response.data.condition.icon_url}`
-    //CHeck
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 }
+
+// C and F Links Java
+//Celsius
+
+let tempMain = document.querySelector(".tempMain");
+let celsiusTemp = null;
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempMain.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".tempMain");
+  tempMain.innerHTML = Math.round(celsiusTemp);
+}
+
+let fahrenLink = document.querySelector("#fahrenheit-temp");
+fahrenLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-temp");
+celsiusLink.addEventListener("click", showCelsius);
+
+Search("Toronto");
