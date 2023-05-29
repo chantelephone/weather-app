@@ -11,6 +11,9 @@ body {
     rgba(216, 241, 230, 0.46) 0.1%,
     rgba(233, 226, 226, 0.28) 90.1%
   );
+  box-shadow: 10px, 20px;
+  max-width: 1000px;
+  min-width: 1000px;
 }
 
 .container {
@@ -22,8 +25,9 @@ body {
   background-size: cover;
   border: solid;
   border-color: #f8f9fa;
-  border-radius: 70px;
+  border-radius: 30px;
   color: #f8f9fa;
+  box-shadow: 10px, 20px;
 }
 
 .dayTime {
@@ -31,8 +35,9 @@ body {
   background-size: cover;
   border: solid;
   border-color: black;
-  border-radius: 70px;
+  border-radius: 30px;
   color: black;
+  box-shadow: 10px, 20px;
 }
 
 h1 {
@@ -53,10 +58,12 @@ h1 {
 }
 
 .wind {
+  display: inline-block;
   border: none;
 }
 
 .precipitation {
+  display: inline-block;
   border: none;
 }
 
