@@ -84,6 +84,8 @@ function showCurrentConditions(response) {
   let cityHeading = document.querySelector("#input-city");
   cityHeading.innerHTML = response.data.city;
 
+  celsiusTemp = Math.round(response.data.temperature.current);
+
   let temperature = Math.round(response.data.temperature.current);
   let headingTemp = document.querySelector(".tempMain");
   headingTemp.innerHTML = `${temperature}`;
@@ -106,10 +108,8 @@ function showCurrentConditions(response) {
 }
 
 // C and F Links Java
-//Celsius
 
 let tempMain = document.querySelector(".tempMain");
-let celsiusTemp = null;
 
 function showFahrenheit(event) {
   event.preventDefault();
@@ -119,7 +119,6 @@ function showFahrenheit(event) {
 
 function showCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector(".tempMain");
   tempMain.innerHTML = Math.round(celsiusTemp);
 }
 
@@ -129,4 +128,4 @@ fahrenLink.addEventListener("click", showFahrenheit);
 let celsiusLink = document.querySelector("#celsius-temp");
 celsiusLink.addEventListener("click", showCelsius);
 
-Search("Toronto");
+let celsiusTemp = null;
