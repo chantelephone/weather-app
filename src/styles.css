@@ -67,10 +67,18 @@ h1 {
   border: none;
 }
 
+.windIcon {
+  padding-left: 10px;
+}
+
 .humidity {
   font-size: 22pt;
   display: inline-block;
   border: none;
+}
+
+.humidityIcon {
+  padding-left: 10px;
 }
 
 p {
