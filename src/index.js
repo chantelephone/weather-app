@@ -150,5 +150,5 @@ if (hour > 20) {
 
 function nightShow(event) {
   console.log(event);
-  currentwindper.classList.add("nightTime");
+  body.classList.add("nightTime");
 }

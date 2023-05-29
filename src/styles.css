@@ -40,13 +40,16 @@ h1 {
   text-decoration: none;
 }
 
-.currentwindper {
+.weatherDesc .nightTime {
   color: #f8f9fa;
+  border: none;
+  background: none;
 }
 
-.currentwindper {
-  color: #a32e37;
+.weatherDesc {
+  color: black;
   border: none;
+  background: none;
 }
 
 .wind {

@@ -24,16 +24,16 @@
   <body class="nightTime, dayTime">
     <div class="container">
       <div class="row">
-        <div class="col-7 col-city"><h1 id="input-city">City</h1></div>
-        <div class="col-5 col-search">
+        <div class="col-6 col-city"><h1 id="input-city">City</h1></div>
+        <div class="col-6 col-search">
           <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">
-              <button id="current-conditions">Current</button>
+              <button id="current-conditions">Current Local Conditions</button>
               <form id="search-form">
                 <input
                   type="search"
                   class="form-control"
-                  placeholder="Search City"
+                  placeholder="Or search another city"
                   autofocus
                   id="city-input"
                 />
@@ -46,9 +46,16 @@
       <span> <h2 id="todays-date"></h2></span>
       <br />
 
-      <div class="row currentwindper nightTime dayTime">
+      <div class="row currentwindper">
         <div class="col-10">
-          <h2><span id="weather-description"> Weather</span></h2>
+          <h2>
+            <span
+              class="weatherDesc nightTime dayTime"
+              id="weather-description"
+            >
+              Weather
+            </span>
+          </h2>
         </div>
         <div class="col-12">
           <h3>
