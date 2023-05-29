@@ -122,7 +122,7 @@ button {
 }
 
 .weatherForecast {
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
   border: none;
   padding-bottom: 30px;
@@ -140,4 +140,8 @@ button {
 
 .weatherForecastMin {
   opacity: 70%;
+}
+
+.openSrc {
+  display: block;
 }

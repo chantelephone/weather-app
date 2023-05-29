@@ -43,6 +43,28 @@ let month = now.getMonth();
 let todaysDate = document.querySelector("#todays-date");
 todaysDate.innerHTML = `${day} | ${hour}:${minute}`;
 
+//Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["tues", "wed", "thurs", "fri"];
+  forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col col-forecastDate">${day} <br />
+            🎃<br/>
+           <span class="weatherForecastMax"> 20</span> |<span class="weatherForecastMin"> 10</span>
+          </div>
+          `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
 //Currrent Button and search bar
 
 //Search Bar
