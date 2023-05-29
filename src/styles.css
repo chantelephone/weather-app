@@ -13,9 +13,46 @@ body {
   );
 }
 
+.container {
+  align-items: center;
+}
+
+.nightTime {
+  background-image: url(nightimg.jpg);
+  border: solid;
+  border-color: #f8f9fa;
+  border-radius: 70px;
+  color: #f8f9fa;
+}
+
+.dayTime {
+  background-image: url(dayimg.jpg);
+  border: solid;
+  border-color: black;
+  border-radius: 70px;
+  color: black;
+}
+
 h1 {
   font-weight: 700;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.currentwindper {
+  color: #f8f9fa;
+}
+
+.currentwindper {
+  color: #a32e37;
+  border: none;
+}
+
+.wind {
+  border: none;
+}
+
+.precipitation {
+  border: none;
 }
 
 p {
@@ -54,22 +91,11 @@ button {
   text-decoration: none;
 }
 
-.wind {
-  border: none;
-}
-
-.precipitation {
-  border: none;
-}
-
 .col-search {
   font-weight: 900;
 }
 .current {
   font-weight: 900;
-}
-.currentwindper {
-  color: rgb(115, 29, 29);
 }
 
 .days {

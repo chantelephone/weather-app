@@ -138,3 +138,17 @@ let celsiusLink = document.querySelector("#celsius-temp");
 celsiusLink.addEventListener("click", showCelsius);
 
 let celsiusTemp = null;
+
+//background img change
+let dayLight = document.querySelector(".nightTime");
+
+if (hour > 20) {
+  dayLight.classList.add("dayTime");
+} else {
+  nightShow();
+}
+
+function nightShow(event) {
+  console.log(event);
+  currentwindper.classList.add("nightTime");
+}
