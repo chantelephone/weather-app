@@ -93,11 +93,10 @@ function showCurrentConditions(response) {
   let weatherIcon = document.querySelector("#weather-icon");
 
   document.querySelector("#current-humidity").innerHTML =
-    response.data.temperature.humidity;
+    response.data.temperature.humidity + `%`;
 
-  document.querySelector("#current-wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  document.querySelector("#current-wind").innerHTML =
+    Math.round(response.data.wind.speed) + `km/h`;
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
 
