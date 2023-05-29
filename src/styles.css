@@ -23,6 +23,7 @@ body {
 
 .nightTime {
   background-image: url(night-sky-background-with-stars_104785-147.avif);
+  background-repeat: no-repeat;
   background-size: cover;
   border: solid;
   border-color: #f8f9fa;
@@ -33,6 +34,7 @@ body {
 
 .dayTime {
   background-image: url(white-cloud-sky-background_74190-4646.avif);
+  background-repeat: no-repeat;
   background-size: cover;
   border: solid;
   border-color: black;
