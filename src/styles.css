@@ -2,7 +2,7 @@ body {
   border: 0.5rem outset black;
   border-width: thick;
   border-style: solid;
-  margin: 50px auto;
+  margin: 10px auto;
   border-radius: 38px;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -15,6 +15,7 @@ body {
   max-width: 1000px;
   min-width: 1000px;
   align-items: center;
+  position: relative;
 }
 
 .container {
