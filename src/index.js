@@ -115,11 +115,20 @@ function showFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   tempMain.innerHTML = Math.round(fahrenheitTemp);
+
+  //Remove "active" class from celsius link
+  celsiusLink.classList.remove("active");
+  //Add "active" class to Fahrenheit link
+  fahrenLink.classList.add("active");
 }
 
 function showCelsius(event) {
   event.preventDefault();
   tempMain.innerHTML = Math.round(celsiusTemp);
+  //Remove "active" class from fahrenheit link
+  fahrenLink.classList.remove("active");
+  //Add "active" class to celsius link
+  celsiusLink.classList.add("active");
 }
 
 let fahrenLink = document.querySelector("#fahrenheit-temp");

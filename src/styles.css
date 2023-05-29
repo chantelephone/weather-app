@@ -39,6 +39,19 @@ button {
 .unit {
   border: none;
   font-size: x-large;
+  text-decoration: none;
+}
+
+.unit .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.unit .active:hover {
+  color: black;
+  cursor: default;
+  text-decoration: none;
 }
 
 .wind {
