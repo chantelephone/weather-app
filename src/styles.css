@@ -18,7 +18,8 @@ body {
 }
 
 .nightTime {
-  background-image: url(nightimg.jpg);
+  background-image: url(night-sky-background-with-stars_104785-147.avif);
+  background-size: cover;
   border: solid;
   border-color: #f8f9fa;
   border-radius: 70px;
@@ -26,7 +27,8 @@ body {
 }
 
 .dayTime {
-  background-image: url(dayimg.jpg);
+  background-image: url(white-cloud-sky-background_74190-4646.avif);
+  background-size: cover;
   border: solid;
   border-color: black;
   border-radius: 70px;
