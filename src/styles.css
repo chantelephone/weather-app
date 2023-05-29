@@ -128,32 +128,16 @@ button {
   padding-bottom: 30px;
 }
 
-.col-mon {
+.col-forecastDate {
   border: none;
   padding: 30px;
-  font-size: 18pt;
+  font-size: 20pt;
 }
 
-.col-tue {
-  border: none;
-  padding: 30px;
-  font-size: 18pt;
+.weatherForecastMax {
+  opacity: 100%;
 }
 
-.col-wed {
-  border: none;
-  padding: 30px;
-  font-size: 18pt;
-}
-
-.col-thurs {
-  border: none;
-  padding: 30px;
-  font-size: 18pt;
-}
-
-.col-fri {
-  border: none;
-  padding: 30px;
-  font-size: 18pt;
+.weatherForecastMin {
+  opacity: 70%;
 }
