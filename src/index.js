@@ -45,7 +45,8 @@ todaysDate.innerHTML = `${day} | ${hour}:${minute}`;
 
 //Forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
   let days = ["tues", "wed", "thurs", "fri"];
   forecastHTML = `<div class="row">`;
@@ -126,6 +127,17 @@ function showCurrentConditions(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+
+  getForecast(response.data.coordinates);
+}
+
+//API call for forecast below
+
+function getForecast(coordinates) {
+  let apiKey = `44b0o7f8fab0527e4faa33t62cd1fcc3`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast); //Brings us up to "displayForecast function up top..."
 }
 
 // C and F Links Java
