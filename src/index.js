@@ -194,6 +194,6 @@ if (hour > 20) {
 
 function nightShow(event) {
   let body = document.querySelector("body");
-  console.log(event);
+
   body.classList.add("nightTime");
 }
