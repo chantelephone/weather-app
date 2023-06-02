@@ -46,8 +46,8 @@ todaysDate.innerHTML = `${day} | ${hour}:${minute}`;
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  return days[day];
   let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  return days[day];
 }
 
 //Forecast
@@ -55,21 +55,21 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily; //What is up with this call???
   let forecastElement = document.querySelector("#forecast");
-  forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
     <div class="col col-forecastDate">${formatDay(forecastDay.time)} <br />
-           <img src:"http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+           <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
              forecastDay.condition.icon
            }.png"><br/>
            <span class="weatherForecastMax">${Math.round(
              forecastDay.temperature.maximum
            )}°</span> |<span class="weatherForecastMin">${Math.round(
-          forecastDay.temerature.minimum
+          forecastDay.temperature.minimum
         )}°</span>
           </div>
           `;
@@ -78,9 +78,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
-//Currrent Button and search bar
 
 //Search Bar
 
