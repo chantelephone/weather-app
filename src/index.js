@@ -43,23 +43,37 @@ let month = now.getMonth();
 let todaysDate = document.querySelector("#todays-date");
 todaysDate.innerHTML = `${day} | ${hour}:${minute}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return days[day];
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+}
+
 //Forecast
 
 function displayForecast(response) {
-  console.log(response);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["tues", "wed", "thurs", "fri"];
   forecastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-    <div class="col col-forecastDate">${day} <br />
-            🎃<br/>
-           <span class="weatherForecastMax"> 20</span> |<span class="weatherForecastMin"> 10</span>
+  days.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+    <div class="col col-forecastDate">${formatDay(forecastDay.time)} <br />
+           <img src:"http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+             forecastDay.condition.icon
+           }.png"><br/>
+           <span class="weatherForecastMax">${Math.round(
+             forecastDay.temperature.maximum
+           )}°</span> |<span class="weatherForecastMin">${Math.round(
+          forecastDay.temerature.minimum
+        )}°</span>
           </div>
           `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -137,7 +151,7 @@ function getForecast(coordinates) {
   let apiKey = `44b0o7f8fab0527e4faa33t62cd1fcc3`;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(displayForecast); //Brings us up to "displayForecast function up top..."
+  axios.get(`${apiUrl}`).then(displayForecast); //Brings us up to "displayForecast function up top..."
 }
 
 // C and F Links Java
